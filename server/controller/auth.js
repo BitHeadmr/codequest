@@ -15,10 +15,10 @@ export const signup = async (req, res) => {
             password: hashedpassword
         });
         const token = jwt.sign({
-            email: extinguser.email, id: extinguser._id
+            email: newuser.email, id: newuser._id
         }, process.env.JWT_SECRET, { expiresIn: "1h" }
         )
-        res.status(200).json({ result: extinguser, token });
+        res.status(200).json({ result: newuser, token });
     } catch (error) {
         res.status(500).json("something went wrong...")
         return
