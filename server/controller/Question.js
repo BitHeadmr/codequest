@@ -64,7 +64,7 @@ export const votequestion = async (req, res) => {
             if (upindex !== -1) {
                 question.upvote = question.upvote.filter((id) => id !== String(userid))
             }
-            if (upindex === -1) {
+            if (downindex  === -1) {
                 question.downvote.push(userid);
             } else {
                 question.downvote = question.downvote.filter((id) => id !== String(userid))
